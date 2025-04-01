@@ -5,8 +5,13 @@ import nz.com.patient_service.model.Patient;
 
 public class PatientMapper {
 
-    public PatientResponseDTO toDTO(Patient) {
+    public PatientResponseDTO toDTO(Patient patient) {
         PatientResponseDTO patientDTO = new PatientResponseDTO();
+        patientDTO.setId(patient.getId().toString());
+        patientDTO.setName(patient.getName());
+        patientDTO.setAddress(patient.getAddress());
+        patientDTO.setDateOfBirth(patient.getDateOfBirth().toString());
+        return patientDTO;
     }
 
 }
