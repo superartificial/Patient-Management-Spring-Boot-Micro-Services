@@ -8,6 +8,7 @@ import nz.com.patient_service.mapper.PatientMapper;
 import nz.com.patient_service.model.Patient;
 import nz.com.patient_service.repository.PatientRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -40,16 +41,9 @@ public class PatientService {
     }
 
     public PatientResponseDTO updatePatient(UUID id, PatientRequestDTO patientRequestDTO) {
-
-        this.patientRepository.findById(id);
-
         Patient patient = patientRepository.findById(id).orElseThrow(() ->
                 new PatientNotFoundException("Patient not found with id: " + id)
         );
-//        if(
-//                !Objects.equals(patient.getEmail(),patientRequestDTO.getEmail()) &&
-//                patientRepository.existsByEmail(patientRequestDTO.getEmail())
-//        )
         if(patientRepository.existsByEmailAndIdNot(patient.getEmail(),id))
         {
             throw new EmailAlreadyExistsException("A patient with this email already exists: " + patientRequestDTO.getEmail());
@@ -60,7 +54,14 @@ public class PatientService {
         patient.setDateOfBirth(LocalDate.parse( patientRequestDTO.getDateOfBirth() ));
 
         return PatientMapper.toDTO(patientRepository.save(patient));
+    }
 
+    public void deletePatient(UUID id) {
+//        Patient patient = patientRepository.findById(id).orElseThrow(() ->
+//                new PatientNotFoundException("Patient not found with id: " + id)
+//        );
+//        this.patientRepository.delete(patient);
+        this.patientRepository.deleteById(id);
     }
 
 
