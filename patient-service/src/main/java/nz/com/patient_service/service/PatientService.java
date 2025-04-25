@@ -4,25 +4,29 @@ import nz.com.patient_service.dto.PatientRequestDTO;
 import nz.com.patient_service.dto.PatientResponseDTO;
 import nz.com.patient_service.exception.EmailAlreadyExistsException;
 import nz.com.patient_service.exception.PatientNotFoundException;
+import nz.com.patient_service.grpc.BillingServiceGrpcClient;
+import nz.com.patient_service.kafka.kafkaProducer;
 import nz.com.patient_service.mapper.PatientMapper;
 import nz.com.patient_service.model.Patient;
 import nz.com.patient_service.repository.PatientRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Service
 public class PatientService {
+    private final PatientRepository patientRepository;
+    private final BillingServiceGrpcClient billingServiceGrpcClient;
+    private final kafkaProducer kafkaProducer;
 
-    private PatientRepository patientRepository;
-
-    public PatientService(PatientRepository patientRepository) {
+    public PatientService(PatientRepository patientRepository, BillingServiceGrpcClient billingServiceGrpcClient, kafkaProducer kafkaProducer) {
+        this.billingServiceGrpcClient = billingServiceGrpcClient;
         this.patientRepository = patientRepository;
+        this.kafkaProducer = kafkaProducer;
     }
 
     public List<PatientResponseDTO> listPatients() {
@@ -37,7 +41,10 @@ public class PatientService {
         if(patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
             throw new EmailAlreadyExistsException("A patient with this email already exists: " + patientRequestDTO.getEmail());
         }
-        return PatientMapper.toDTO(patientRepository.save(PatientMapper.toModel(patientRequestDTO)));
+        Patient newPatient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
+        billingServiceGrpcClient.createBillingAccount(newPatient.getId().toString(), newPatient.getName(), newPatient.getEmail());
+        kafkaProducer.sendEvent(newPatient);
+        return PatientMapper.toDTO(newPatient);
     }
 
     public PatientResponseDTO updatePatient(UUID id, PatientRequestDTO patientRequestDTO) {
@@ -52,7 +59,6 @@ public class PatientService {
         patient.setAddress(patientRequestDTO.getAddress());
         patient.setEmail(patientRequestDTO.getEmail());
         patient.setDateOfBirth(LocalDate.parse( patientRequestDTO.getDateOfBirth() ));
-
         return PatientMapper.toDTO(patientRepository.save(patient));
     }
 

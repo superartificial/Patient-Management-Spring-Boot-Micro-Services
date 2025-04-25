@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Patient-Management-Spring-Boot-Micro-Services.iml" filepath="$PROJECT_DIR$/.idea/Patient-Management-Spring-Boot-Micro-Services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/analytics-service/analytics-service.iml" filepath="$PROJECT_DIR$/analytics-service/analytics-service.iml" />
     </modules>
   </component>
 </project>
