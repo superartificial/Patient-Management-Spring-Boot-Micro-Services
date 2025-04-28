@@ -5,34 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb4b238-92c8-40c8-819d-6f05d491f41e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analytics-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analytics-service/src/main/java/nz/clem/analyticsservice/kafka/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analytics-service/src/main/proto/patient_event.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/dto/LoginRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/dto/LoginResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/repository/AuthRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/util/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient-service/src/main/java/nz/com/patient_service/kafka/kafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient-service/src/main/proto/patient_event.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/nz/clem/apigateway/exception/JwtValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/nz/clem/apigateway/filter/JwtValidationGatewayFilterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/login.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/validate.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-requests/patient-service/patient-list.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-tests/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-angular/.postcssrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/authentication-request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/authentication-response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/nz/com/patient_service/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/nz/com/patient_service/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/java/nz/clem/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/repository/AuthRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/nz/clem/billing_service/grpc/BillingGrpcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/nz/clem/billing_service/grpc/BillingGrpcService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTTP Request" />
         <option value="Class" />
       </list>
     </option>
@@ -73,8 +69,17 @@
     "Docker.auth-service.executor": "Run",
     "Docker.kafka.executor": "Run",
     "Docker.patient-service.executor": "Run",
+    "HTTP Request.All in login.executor": "Run",
+    "HTTP Request.All in patient-list.executor": "Run",
+    "HTTP Request.login | Login request to retrieve a token.executor": "Run",
+    "HTTP Request.patient-list | #1.executor": "Run",
+    "HTTP Request.validate | GET request to validate Token.executor": "Run",
+    "JUnit.AuthIntegrationTest.executor": "Run",
+    "JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin.executor": "Run",
+    "JUnit.AuthIntegrationTest.shouldReturnWithValidToken.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
+    "Maven.api-gateway [clean].executor": "Run",
     "Maven.patient-service [clean].executor": "Run",
     "Maven.patient-service [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -120,7 +125,42 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.auth-service">
+  <component name="RunManager" selected="JUnit.AuthIntegrationTest">
+    <configuration name="login | Login request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login request to retrieve a token" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="patient-list | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/patient-service/patient-list.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldReturnUnauthorizedOnInvalidLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthIntegrationTest.shouldReturnWithValidToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldReturnWithValidToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnalyticsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="analytics-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nz.clem.analyticsservice.AnalyticsServiceApplication" />
@@ -138,6 +178,21 @@
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nz.clem.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BillingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="billing-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nz.clem.billing_service.BillingServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="patient-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nz.com.patient_service.PatientServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,6 +229,14 @@
         <settings>
           <option name="imageTag" value="api-gateway:latest" />
           <option name="containerName" value="api-gateway" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="AUTH_SERVICE_URL" />
+                <option name="value" value="http://auth-service:4005" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -261,14 +324,6 @@
                 <option name="name" value="SPRING_SQL_INIT_MODE" />
                 <option name="value" value="always" />
               </DockerEnvVarImpl>
-            </list>
-          </option>
-          <option name="portBindings">
-            <list>
-              <DockerPortBindingImpl>
-                <option name="containerPort" value="4005" />
-                <option name="hostPort" value="4005" />
-              </DockerPortBindingImpl>
             </list>
           </option>
           <option name="commandLineOptions" value="--network internal" />
@@ -409,10 +464,34 @@
       <item itemvalue="Docker.auth-service-db" />
       <item itemvalue="Docker.auth-service" />
       <item itemvalue="Docker.billing-service" />
+      <item itemvalue="HTTP Request.login | Login request to retrieve a token" />
+      <item itemvalue="HTTP Request.patient-list | #1" />
+      <item itemvalue="JUnit.AuthIntegrationTest" />
+      <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin" />
+      <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnWithValidToken" />
+      <item itemvalue="Spring Boot.BillingServiceApplication" />
+      <item itemvalue="Spring Boot.PatientServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AnalyticsServiceApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AuthIntegrationTest" />
+        <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnWithValidToken" />
+        <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin" />
+        <item itemvalue="HTTP Request.patient-list | #1" />
+        <item itemvalue="HTTP Request.login | Login request to retrieve a token" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -423,11 +502,24 @@
       <option name="presentableId" value="Default" />
       <updated>1743473179642</updated>
       <workItem from="1745277173599" duration="79000" />
-      <workItem from="1745465493721" duration="31372000" />
+      <workItem from="1745465493721" duration="55815000" />
+      <workItem from="1745802052994" duration="380000" />
+      <workItem from="1745802446718" duration="1017000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

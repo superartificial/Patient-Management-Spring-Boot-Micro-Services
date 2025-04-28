@@ -9,12 +9,11 @@
         <module name="analytics-service" />
         <module name="api-gateway" />
         <module name="auth-service" />
+        <module name="patient-service" />
+        <module name="integration-tests" />
+        <module name="billing-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="billing-service" target="21" />
-      <module name="patient-service" target="21" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

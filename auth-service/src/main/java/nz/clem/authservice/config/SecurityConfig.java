@@ -13,7 +13,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize.anyRequest().permitAll()) // permitting all because incomming requests are authenticated by the gateway
+        http.authorizeHttpRequests(authorize -> authorize.anyRequest().permitAll()) // permitting all because incoming requests are authenticated by the gateway
                 .csrf(AbstractHttpConfigurer::disable); // disabling cors and csrf because they are handled by the gateway
         return http.build();
     }

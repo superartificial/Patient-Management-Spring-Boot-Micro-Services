@@ -1,8 +1,7 @@
 package nz.clem.authservice.service;
 
+import io.jsonwebtoken.JwtException;
 import nz.clem.authservice.dto.LoginRequestDTO;
-import nz.clem.authservice.model.User;
-import nz.clem.authservice.repository.AuthRepository;
 import nz.clem.authservice.util.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,5 +26,14 @@ public class AuthService {
                 .findByEmail(loginRequest.getEmail())
                 .filter(u -> passwordEncoder.matches(loginRequest.getPassword(), u.getPassword()))
                 .map(u -> jwtUtil.generateToken(u.getEmail(), u.getRole()));
+    }
+
+    public boolean validateToken(String token) {
+        try {
+            jwtUtil.validateToken(token);
+            return true;
+        } catch (JwtException e) {
+            return false;
+        }
     }
 }
