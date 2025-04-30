@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb4b238-92c8-40c8-819d-6f05d491f41e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/nz/clem/apigateway/exception/JwtValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/nz/clem/apigateway/filter/JwtValidationGatewayFilterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/login.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/validate.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-requests/patient-service/patient-list.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-tests/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/.postcssrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/authentication-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/authentication-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/pm/stack/LocalStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/PatientIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/java/nz/clem/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/repository/AuthRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/nz/clem/authservice/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/nz/clem/billing_service/grpc/BillingGrpcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/nz/clem/billing_service/grpc/BillingGrpcService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.LocalStack.executor": "Run",
     "Docker.analytics-service.executor": "Run",
     "Docker.api-gateway.executor": "Run",
     "Docker.auth-service-db.executor": "Run",
@@ -74,12 +61,16 @@
     "HTTP Request.login | Login request to retrieve a token.executor": "Run",
     "HTTP Request.patient-list | #1.executor": "Run",
     "HTTP Request.validate | GET request to validate Token.executor": "Run",
+    "JUnit.All in integration-tests.executor": "Run",
     "JUnit.AuthIntegrationTest.executor": "Run",
     "JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin.executor": "Run",
     "JUnit.AuthIntegrationTest.shouldReturnWithValidToken.executor": "Run",
+    "JUnit.PatientIntegrationTest.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
     "Maven.api-gateway [clean].executor": "Run",
+    "Maven.infrastructure [clean].executor": "Run",
+    "Maven.infrastructure [compile].executor": "Run",
     "Maven.patient-service [clean].executor": "Run",
     "Maven.patient-service [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -125,12 +116,27 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AuthIntegrationTest">
-    <configuration name="login | Login request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login request to retrieve a token" runType="Run single request">
-      <method v="2" />
+  <component name="RunManager" selected="Application.LocalStack">
+    <configuration name="LocalStack" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.pm.stack.LocalStack" />
+      <module name="infrastructure" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/infrastructure" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="patient-list | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/patient-service/patient-list.http" executionIdentifier="#1" runType="Run single request">
-      <method v="2" />
+    <configuration name="All in integration-tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AuthIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integration-tests" />
@@ -157,6 +163,15 @@
       <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
       <option name="METHOD_NAME" value="shouldReturnWithValidToken" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -457,6 +472,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.LocalStack" />
       <item itemvalue="Docker.kafka" />
       <item itemvalue="Docker.patient-service" />
       <item itemvalue="Docker.analytics-service" />
@@ -464,11 +480,11 @@
       <item itemvalue="Docker.auth-service-db" />
       <item itemvalue="Docker.auth-service" />
       <item itemvalue="Docker.billing-service" />
-      <item itemvalue="HTTP Request.login | Login request to retrieve a token" />
-      <item itemvalue="HTTP Request.patient-list | #1" />
+      <item itemvalue="JUnit.All in integration-tests" />
       <item itemvalue="JUnit.AuthIntegrationTest" />
       <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin" />
       <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnWithValidToken" />
+      <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="Spring Boot.BillingServiceApplication" />
       <item itemvalue="Spring Boot.PatientServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
@@ -477,11 +493,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in integration-tests" />
+        <item itemvalue="JUnit.PatientIntegrationTest" />
         <item itemvalue="JUnit.AuthIntegrationTest" />
         <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnWithValidToken" />
         <item itemvalue="JUnit.AuthIntegrationTest.shouldReturnUnauthorizedOnInvalidLogin" />
-        <item itemvalue="HTTP Request.patient-list | #1" />
-        <item itemvalue="HTTP Request.login | Login request to retrieve a token" />
       </list>
     </recent_temporary>
   </component>
@@ -504,7 +520,8 @@
       <workItem from="1745277173599" duration="79000" />
       <workItem from="1745465493721" duration="55815000" />
       <workItem from="1745802052994" duration="380000" />
-      <workItem from="1745802446718" duration="1017000" />
+      <workItem from="1745802446718" duration="5135000" />
+      <workItem from="1745811216929" duration="31034000" />
     </task>
     <servers />
   </component>
